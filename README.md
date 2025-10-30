@@ -1,6 +1,6 @@
 # Dapper Büyük Veri Dashboard 🚀
 ## 📍 Proje Hakkında 
-Bu proje, 1 milyon satırlık büyük veri seti üzerinde çalışan bir satış analiz ve raporlama sistemidir.
+Bu proje, 10 milyon+ satırlık büyük veri seti üzerinde çalışan bir satış analiz ve raporlama sistemidir.
 ASP.NET Core MVC, Dapper ORM ve Microsoft SQL Server (MSSQL) teknolojileri kullanılarak geliştirilmiştir.
 Amaç; büyük veriler üzerinde yüksek performanslı sorgular, istatistiksel özetler ve dinamik dashboard bileşenleri sunmaktır.
 ## 🛠️ Kullanılan Teknolojiler ve Araçlar  
@@ -31,5 +31,5 @@ Büyük veri setleri üzerinde, ağır ORM yapıları olmadan (Dapper ile) hızl
 
 <img width="1883" height="916" alt="Image" src="https://github.com/user-attachments/assets/6851d5e2-2c36-4e2a-8cce-fa478fe20c60" />
 
-## 📦 Veri Seti ve Katkılar
+## 📦 Veri Seti
 Veri Seti: 10M Turkish Market Sales Dataset – Ömer Çolakoğlu (Kaggle)
