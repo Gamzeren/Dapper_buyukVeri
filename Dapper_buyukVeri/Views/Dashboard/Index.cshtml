@@ -1,0 +1,715 @@
+﻿@model Dapper_buyukVeri.Controllers.DashboardViewModel
+@{
+	Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Kaiadmin - Bootstrap 5 Admin Dashboard</title>
+	<meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+		  name="viewport" />
+	<link rel="icon"
+		  href="/kaiadmin-lite-1.2.0/assets/img/kaiadmin/favicon.ico"
+		  type="image/x-icon" />
+
+	<!-- Fonts and icons -->
+	<script src="/kaiadmin-lite-1.2.0/assets/js/plugin/webfont/webfont.min.js"></script>
+	<script>
+		WebFont.load({
+		  google: { families: ["Public Sans:300,400,500,600,700"] },
+		  custom: {
+			families: [
+			  "Font Awesome 5 Solid",
+			  "Font Awesome 5 Regular",
+			  "Font Awesome 5 Brands",
+			  "simple-line-icons",
+			],
+			urls: ["/kaiadmin-lite-1.2.0/assets/css/fonts.min.css"],
+		  },
+		  active: function () {
+			sessionStorage.fonts = true;
+		  },
+		});
+	</script>
+
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="/kaiadmin-lite-1.2.0/assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/kaiadmin-lite-1.2.0/assets/css/plugins.min.css" />
+	<link rel="stylesheet" href="/kaiadmin-lite-1.2.0/assets/css/kaiadmin.min.css" />
+
+	<!-- CSS Just for demo purpose, don't include it in your project -->
+	<link rel="stylesheet" href="/kaiadmin-lite-1.2.0/assets/css/demo.css" />
+</head>
+<body>
+	<div class="wrapper">
+		<!-- Sidebar -->
+		<div class="sidebar" data-background-color="dark">
+			<div class="sidebar-logo">
+				<!-- Logo Header -->
+				<div class="logo-header" data-background-color="dark">
+					<a href="index.html" class="logo">
+						<img src="/kaiadmin-lite-1.2.0/assets/img/kaiadmin/logo_light.svg"
+							 alt="navbar brand"
+							 class="navbar-brand"
+							 height="20" />
+					</a>
+					<div class="nav-toggle">
+						<button class="btn btn-toggle toggle-sidebar">
+							<i class="gg-menu-right"></i>
+						</button>
+						<button class="btn btn-toggle sidenav-toggler">
+							<i class="gg-menu-left"></i>
+						</button>
+					</div>
+					<button class="topbar-toggler more">
+						<i class="gg-more-vertical-alt"></i>
+					</button>
+				</div>
+				<!-- End Logo Header -->
+			</div>
+			<div class="sidebar-wrapper scrollbar scrollbar-inner">
+				<div class="sidebar-content">
+					<ul class="nav nav-secondary">
+						<li class="nav-item active">
+							<a data-bs-toggle="collapse"
+							   href="/Dashboard/Index/"
+							   class="collapsed"
+							   aria-expanded="false">
+								<i class="fas fa-home"></i>
+								<p>Dashboard</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="/Dashboard/Table">
+								<i class="fa fa-layer-group"></i>
+								<p>Table</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- End Sidebar -->
+
+		<div class="main-panel">
+			<div class="main-header">
+				<div class="main-header-logo">
+					<!-- Logo Header -->
+					<div class="logo-header" data-background-color="dark">
+						<a href="index.html" class="logo">
+							<img src="/kaiadmin-lite-1.2.0/assets/img/kaiadmin/logo_light.svg"
+								 alt="navbar brand"
+								 class="navbar-brand"
+								 height="20" />
+						</a>
+						<div class="nav-toggle">
+							<button class="btn btn-toggle toggle-sidebar">
+								<i class="gg-menu-right"></i>
+							</button>
+							<button class="btn btn-toggle sidenav-toggler">
+								<i class="gg-menu-left"></i>
+							</button>
+						</div>
+						<button class="topbar-toggler more">
+							<i class="gg-more-vertical-alt"></i>
+						</button>
+					</div>
+					<!-- End Logo Header -->
+				</div>
+				<!-- Navbar Header -->
+				<nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+					<div class="container-fluid">
+						<nav class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<button type="submit" class="btn btn-search pe-1">
+										<i class="fa fa-search search-icon"></i>
+									</button>
+								</div>
+								<input type="text"
+									   placeholder="Search ..."
+									   class="form-control" />
+							</div>
+						</nav>
+
+						<ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+							<li class="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none">
+								<a class="nav-link dropdown-toggle"
+								   data-bs-toggle="dropdown"
+								   href="#"
+								   role="button"
+								   aria-expanded="false"
+								   aria-haspopup="true">
+									<i class="fa fa-search"></i>
+								</a>
+								<ul class="dropdown-menu dropdown-search animated fadeIn">
+									<form class="navbar-left navbar-form nav-search">
+										<div class="input-group">
+											<input type="text"
+												   placeholder="Search ..."
+												   class="form-control" />
+										</div>
+									</form>
+								</ul>
+							</li>
+
+
+							<li class="nav-item topbar-user dropdown hidden-caret">
+								<a class="dropdown-toggle profile-pic"
+								   data-bs-toggle="dropdown"
+								   href="#"
+								   aria-expanded="false">
+									<div class="avatar-sm">
+										<img src="/kaiadmin-lite-1.2.0/assets/img/profile.jpg"
+											 alt="..."
+											 class="avatar-img rounded-circle" />
+									</div>
+									<span class="profile-username">
+										<span class="op-7"></span>
+										<span class="fw-bold">Gamze</span>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<!-- End Navbar -->
+			</div>
+
+			<div class="content">
+				<div class="page-inner">
+					<h4 class="page-title">Kontrol Paneli</h4>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="card card-stats card-round">
+								<div class="card-body ">
+									<div class="row">
+										<div class="col-5">
+											<div class="icon-big text-center icon-success">
+												<i class="fa fa-coins"></i>
+											</div>
+										</div>
+										<div class="col-7 col-stats">
+											<div class="numbers">
+												<p class="card-category">Toplam Gelir</p>
+												<h4 class="card-title">@Model.TotalRevenue.ToString("C0")</h4>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="card card-stats card-round">
+								<div class="card-body ">
+									<div class="row">
+										<div class="col-5">
+											<div class="icon-big text-center icon-primary">
+												<i class="fa fa-shopping-cart"></i>
+											</div>
+										</div>
+										<div class="col-7 col-stats">
+											<div class="numbers">
+												<p class="card-category">Toplam Satış Adeti</p>
+												<h4 class="card-title">@Model.TotalSalesCount</h4>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="card card-stats card-round">
+								<div class="card-body ">
+									<div class="row">
+										<div class="col-5">
+											<div class="icon-big text-center icon-warning">
+												<i class="fa fa-map"></i>
+											</div>
+										</div>
+										<div class="col-7 col-stats">
+											<div class="numbers">
+												<p class="card-category">En Çok Satış Şehri</p>
+												<h4 class="card-title">@Model.TopSalesCity</h4>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="card card-stats card-round">
+								<div class="card-body ">
+									<div class="row">
+										<div class="col-5">
+											<div class="icon-big text-center icon-secondary">
+												<i class="fa fa-calendar-alt"></i>
+											</div>
+										</div>
+										<div class="col-7 col-stats">
+											<div class="numbers">
+												<p class="card-category">En Çok Satış Yılı</p>
+												<h4 class="card-title">@Model.TopSalesYear</h4>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6 d-flex">
+							<div class="card w-100 h-100">
+								<div class="card-header">
+									<h4 class="card-title">Aylara Göre Sipariş Adeti</h4>
+								</div>
+								<div class="card-body">
+									<canvas id="ordersChart"></canvas>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 d-flex">
+							<div class="card w-100 h-100" style="background:#f3e8ff;">
+								<div class="card-header" style="background:transparent;border-bottom:0;">
+									<h4 class="card-title" style="color:#6f42c1;">En Çok Satılan Ürünler</h4>
+								</div>
+								<div class="card-body">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Ürün</th>
+												<th>Adet</th>
+												<th>Gelir</th>
+											</tr>
+										</thead>
+										<tbody>
+											@foreach (var pr in Model.TopProducts.Take(6))
+											{
+												<tr>
+													<td>@pr.ProductName</td>
+													<td>@pr.TotalQuantity</td>
+													<td>@pr.TotalRevenue.ToString("C0")</td>
+												</tr>
+											}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row mt-3">
+						<div class="col-md-6">
+							<div class="card" style="background:#e8f7ef;">
+								<div class="card-header" style="background:transparent;border-bottom:0;">
+									<h4 class="card-title" style="color:#198754;">En Çok Satış Yapan Personeller (İlk 5)</h4>
+								</div>
+								<div class="card-body">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Personel</th>
+												<th>Satış</th>
+												<th>Gelir</th>
+											</tr>
+										</thead>
+										<tbody>
+											@foreach (var p in Model.TopSalesPersons)
+											{
+												<tr>
+													<td>@p.NameSurname</td>
+													<td>@p.SalesCount</td>
+													<td>@p.TotalRevenue.ToString("C0")</td>
+												</tr>
+											}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="card" style="background:#fff0e1;">
+								<div class="card-header" style="background:transparent;border-bottom:0;">
+									<h4 class="card-title" style="color:#fd7e14;">Mağazaların En Çok Satış Yaptığı Kategoriler</h4>
+								</div>
+								<div class="card-body">
+									<table class="table">
+										<thead>
+											<tr>
+												<th>Kategori</th>
+												<th>Satış</th>
+												<th>Gelir</th>
+											</tr>
+										</thead>
+										<tbody>
+											@foreach (var c in Model.TopCategories)
+											{
+												<tr>
+													<td>@c.CategoryName</td>
+													<td>@c.SalesCount</td>
+													<td>@c.TotalRevenue.ToString("C0")</td>
+												</tr>
+											}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row mt-3">
+						<div class="col-md-4">
+							<div class="card">
+								<div class="card-header d-flex align-items-center">
+									<i class="fa fa-receipt me-2 text-primary"></i>
+									<h4 class="card-title mb-0">Son 5 Sipariş</h4>
+								</div>
+								<div class="card-body">
+									<ul class="list-group list-group-flush">
+										@foreach (var o in Model.LastOrders)
+										{
+											<li class="list-group-item d-flex justify-content-between align-items-center">
+												<span>
+													<strong>#@o.OrderId</strong> - @o.UserName<br />
+													<small>@o.ItemName</small>
+												</span>
+												<span class="badge bg-primary">@o.TotalPrice.ToString("C0")</span>
+											</li>
+										}
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card">
+								<div class="card-header d-flex align-items-center">
+									<i class="fa fa-comments me-2 text-success"></i>
+									<h4 class="card-title mb-0">Son 4 Yorum</h4>
+								</div>
+								<div class="card-body">
+									<table class="table">
+										<tbody>
+											@foreach (var c in Model.LastOrders.Take(4))
+											{
+												<tr>
+													<td style="width:48px">
+														<img src="https://ui-avatars.com/api/?name=@c.UserName&background=0D8ABC&color=fff&size=48" alt="avatar" class="rounded-circle" />
+													</td>
+													<td>
+														<strong>@c.UserName</strong><br />
+														<small>@c.ItemName</small>
+													</td>
+													<td class="text-end">
+														<small>@c.Date.ToString("dd.MM.yyyy")</small>
+													</td>
+												</tr>
+											}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="card" style="background:#e9f2ff;">
+								<div class="card-header d-flex align-items-center" style="background:transparent;border-bottom:0;">
+									<i class="fa fa-users me-2" style="color:#0d6efd;"></i>
+									<h4 class="card-title mb-0" style="color:#0d6efd;">En Aktif 5 Kullanıcı</h4>
+								</div>
+								<div class="card-body">
+									<table class="table mb-0">
+										<thead>
+											<tr>
+												<th>Kullanıcı</th>
+												<th class="text-end">Sipariş</th>
+											</tr>
+										</thead>
+										<tbody>
+											@foreach (var u in Model.ActiveUsers)
+											{
+												<tr>
+													<td>@u.UserName</td>
+													<td class="text-end">@u.OrderCount</td>
+												</tr>
+											}
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<style>
+						.card + .card {
+							margin-top: 1rem;
+						}
+
+						.card .card-header {
+							border-bottom: 0;
+						}
+
+						.card .table th, .card .table td {
+							vertical-align: middle;
+						}
+
+						.page-title {
+							font-weight: 600;
+						}
+					</style>
+
+				</div>
+			</div>
+		</div>
+
+		<footer class="footer">
+			<div class="container-fluid d-flex justify-content-between">
+				<nav class="pull-left">
+					<ul class="nav">
+						<li class="nav-item">
+							<a class="nav-link" href="http://www.themekita.com">
+								ThemeKita
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"> Help </a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#"> Licenses </a>
+						</li>
+					</ul>
+				</nav>
+				<div class="copyright">
+					2024, made with <i class="fa fa-heart heart text-danger"></i> by
+					<a href="http://www.themekita.com">ThemeKita</a>
+				</div>
+				<div>
+					Distributed by
+					<a target="_blank" href="https://themewagon.com/">ThemeWagon</a>.
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<!-- Custom template | don't include it in your project! -->
+	<div class="custom-template">
+		<div class="title">Settings</div>
+		<div class="custom-content">
+			<div class="switcher">
+				<div class="switch-block">
+					<h4>Logo Header</h4>
+					<div class="btnSwitch">
+						<button type="button"
+								class="selected changeLogoHeaderColor"
+								data-color="dark"></button>
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="blue"></button>
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="purple"></button>
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="light-blue"></button>
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="green"></button>
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="orange"></button>
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="red"></button>
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="white"></button>
+						<br />
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="dark2"></button>
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="blue2"></button>
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="purple2"></button>
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="light-blue2"></button>
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="green2"></button>
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="orange2"></button>
+						<button type="button"
+								class="changeLogoHeaderColor"
+								data-color="red2"></button>
+					</div>
+				</div>
+				<div class="switch-block">
+					<h4>Navbar Header</h4>
+					<div class="btnSwitch">
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="dark"></button>
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="blue"></button>
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="purple"></button>
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="light-blue"></button>
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="green"></button>
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="orange"></button>
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="red"></button>
+						<button type="button"
+								class="selected changeTopBarColor"
+								data-color="white"></button>
+						<br />
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="dark2"></button>
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="blue2"></button>
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="purple2"></button>
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="light-blue2"></button>
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="green2"></button>
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="orange2"></button>
+						<button type="button"
+								class="changeTopBarColor"
+								data-color="red2"></button>
+					</div>
+				</div>
+				<div class="switch-block">
+					<h4>Sidebar</h4>
+					<div class="btnSwitch">
+						<button type="button"
+								class="changeSideBarColor"
+								data-color="white"></button>
+						<button type="button"
+								class="selected changeSideBarColor"
+								data-color="dark"></button>
+						<button type="button"
+								class="changeSideBarColor"
+								data-color="dark2"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="custom-toggle">
+			<i class="icon-settings"></i>
+		</div>
+	</div>
+	<!-- End Custom template -->
+	</div>
+	<!--   Core JS Files   -->
+	<script src="/kaiadmin-lite-1.2.0/assets/js/core/jquery-3.7.1.min.js"></script>
+	<script src="/kaiadmin-lite-1.2.0/assets/js/core/popper.min.js"></script>
+	<script src="/kaiadmin-lite-1.2.0/assets/js/core/bootstrap.min.js"></script>
+
+	<!-- jQuery Scrollbar -->
+	<script src="/kaiadmin-lite-1.2.0/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+	<!-- Chart JS -->
+	<script src="/kaiadmin-lite-1.2.0/assets/js/plugin/chart.js/chart.min.js"></script>
+
+	<!-- jQuery Sparkline -->
+	<script src="/kaiadmin-lite-1.2.0/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+	<!-- Chart Circle -->
+	<script src="/kaiadmin-lite-1.2.0/assets/js/plugin/chart-circle/circles.min.js"></script>
+
+	<!-- Datatables -->
+	<script src="/kaiadmin-lite-1.2.0/assets/js/plugin/datatables/datatables.min.js"></script>
+
+	<!-- Bootstrap Notify -->
+	<script src="/kaiadmin-lite-1.2.0/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+	<!-- jQuery Vector Maps -->
+	<script src="/kaiadmin-lite-1.2.0/assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+	<script src="/kaiadmin-lite-1.2.0/assets/js/plugin/jsvectormap/world.js"></script>
+
+	<!-- Sweet Alert -->
+	<script src="/kaiadmin-lite-1.2.0/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+	<!-- Kaiadmin JS -->
+	<script src="/kaiadmin-lite-1.2.0/assets/js/kaiadmin.min.js"></script>
+
+	<!-- Kaiadmin DEMO methods, don't include it in your project! -->
+	<script src="/kaiadmin-lite-1.2.0/assets/js/setting-demo.js"></script>
+	<script src="/kaiadmin-lite-1.2.0/assets/js/demo.js"></script>
+	<script>
+		$("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
+		  type: "line",
+		  height: "70",
+		  width: "100%",
+		  lineWidth: "2",
+		  lineColor: "#177dff",
+		  fillColor: "rgba(23, 125, 255, 0.14)",
+		});
+
+		$("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
+		  type: "line",
+		  height: "70",
+		  width: "100%",
+		  lineWidth: "2",
+		  lineColor: "#f3545d",
+		  fillColor: "rgba(243, 84, 93, .14)",
+		});
+
+		$("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
+		  type: "line",
+		  height: "70",
+		  width: "100%",
+		  lineWidth: "2",
+		  lineColor: "#ffa534",
+		  fillColor: "rgba(255, 165, 52, .14)",
+		});
+	</script>
+	<script>
+		var ctx = document.getElementById('ordersChart').getContext('2d');
+		var ordersChart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.MonthlyOrderCounts.Select(x => x.Month))),
+				datasets: [{
+					label: 'Sipariş Adeti',
+					data: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.MonthlyOrderCounts.Select(x => x.OrderCount))),
+					backgroundColor: 'rgba(23, 125, 255, 0.2)',
+					borderColor: 'rgba(23, 125, 255, 1)',
+					borderWidth: 2,
+					fill: true
+				}]
+			},
+			options: {
+				responsive: true,
+				scales: {
+					x: { display: true },
+					y: { beginAtZero: true }
+				}
+			}
+		});
+	</script>
+</body>
+</html>
+
